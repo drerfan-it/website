@@ -56,15 +56,11 @@ export default function ContactPage() {
                             <ul className="space-y-3 text-lg text-muted-foreground">
                                 <li className="flex items-center gap-4">
                                     <Clock className="h-6 w-6 text-primary" />
-                                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                                    <span>Saturday - Thursday: 6:00 PM - 9:00 PM</span>
                                 </li>
                                  <li className="flex items-center gap-4">
                                     <Clock className="h-6 w-6 text-primary" />
-                                    <span>Saturday: 10:00 AM - 2:00 PM</span>
-                                </li>
-                                 <li className="flex items-center gap-4">
-                                    <Clock className="h-6 w-6 text-primary" />
-                                    <span>Sunday: Closed</span>
+                                    <span>Friday: Closed</span>
                                 </li>
                             </ul>
                         </div>
