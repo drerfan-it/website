@@ -1,8 +1,28 @@
+
+"use client";
+
 import Link from "next/link";
-import { HeartPulse, Mail, Phone, MapPin, Facebook, Youtube } from "lucide-react";
-import { NAV_LINKS } from "@/lib/constants";
+import { HeartPulse } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations, ICONS } from "@/lib/i18n";
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const NAV_LINKS = [
+    { href: "/", label: t.nav.home },
+    { href: "/about", label: t.nav.about },
+    { href: "/services", label: t.nav.services },
+    { href: "/resources",label: t.nav.resources },
+    { href: "/contact", label: t.nav.contact },
+  ];
+
+  const socialLinks = [
+    { href: "https://facebook.com/profdrerfan", icon: ICONS.footer.facebook },
+    { href: "https://www.youtube.com/@prof.dr.smaerfan", icon: ICONS.footer.youtube },
+  ];
+
   return (
     <footer className="bg-secondary border-t">
       <div className="container mx-auto px-4 py-12">
@@ -13,16 +33,19 @@ export default function Footer() {
               <span className="font-headline text-xl font-bold">Prof. Dr. Erfan</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Pioneer colorectal & laser surgeon in Bangladesh.
+              {t.footer.tagline}
             </p>
             <div className="flex space-x-4 mt-4">
-                <Link href="https://facebook.com/profdrerfan" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-                <Link href="https://www.youtube.com/@prof.dr.smaerfan" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Youtube /></Link>
+                {socialLinks.map(link => (
+                    <Link key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                        <link.icon />
+                    </Link>
+                ))}
             </div>
           </div>
           
           <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-headline text-lg font-semibold mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -35,33 +58,34 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="font-headline text-lg font-semibold mb-4">{t.footer.contactUs}</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-primary mt-1" />
-                <span>City Tower, 44/7 Panthapath, Dhaka-1205</span>
+                <ICONS.footer.map className="h-4 w-4 text-primary mt-1" />
+                <span>{t.contact.info.addressTitle}, {t.contact.info.addressLine1}, {t.contact.info.addressLine2}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
+                <ICONS.footer.phone className="h-4 w-4 text-primary" />
                 <span>01626-555511</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary" />
+                <ICONS.footer.mail className="h-4 w-4 text-primary" />
                 <span>contact@drerfan.com</span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-headline text-lg font-semibold mb-4">Clinic Hours</h3>
+            <h3 className="font-headline text-lg font-semibold mb-4">{t.footer.clinicHours}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Saturday - Thursday: 6:00 PM - 9:00 PM</li>
-                <li>Friday: Closed</li>
+                <li>{t.footer.hours_1}</li>
+                <li>{t.footer.hours_2}</li>
+                <li>{t.footer.hours_3}</li>
             </ul>
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Prof. Dr. S. M. A. Erfan. All Rights Reserved.</p>
+          <p>{t.footer.copyright}</p>
         </div>
       </div>
     </footer>

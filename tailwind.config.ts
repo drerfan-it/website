@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -17,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"PT Sans"', 'sans-serif'],
-        headline: ['"Playfair Display"', 'serif'],
+        body: ['"PT Sans"', '"Hind Siliguri"', 'sans-serif'],
+        headline: ['"Playfair Display"', '"Hind Siliguri"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

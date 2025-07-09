@@ -1,10 +1,14 @@
+
+"use client";
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartPulse, Stethoscope, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppointmentModal } from "@/components/AppointmentModal";
 import Link from "next/link";
-import { STATS, CONDITIONS_TREATED, WHY_CHOOSE_US } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations, ICONS } from "@/lib/i18n";
 
 export default function Home() {
   return (
@@ -19,6 +23,9 @@ export default function Home() {
 }
 
 function HeroSection() {
+  const { language } = useLanguage();
+  const t = translations[language].home.hero;
+
   return (
     <section className="relative h-[60vh] md:h-[80vh] w-full">
       <Image
@@ -32,15 +39,15 @@ function HeroSection() {
       <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
         <div className="max-w-3xl px-4">
           <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Advanced Colorectal Care by Prof. Dr. S. M. A. Erfan
+            {t.title}
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
-            Pioneer in painless, bloodless laser surgery for Piles, Fistula, Fissure & Pilonidal Sinus in Bangladesh.
+            {t.subtitle}
           </p>
           <div className="mt-8">
             <AppointmentModal>
               <Button size="lg">
-                Book an Appointment
+                {t.button}
               </Button>
             </AppointmentModal>
           </div>
@@ -51,6 +58,14 @@ function HeroSection() {
 }
 
 function StatsSection() {
+  const { language } = useLanguage();
+  const t = translations[language].home.stats;
+  const STATS = [
+    { value: "30,000+", label: t.item1 },
+    { value: "99%", label: t.item2 },
+    { value: "Pioneer", label: t.item3 },
+    { value: "World-Class", label: t.item4 },
+  ];
   return (
     <section className="bg-background py-16 sm:py-24">
       <div className="container mx-auto px-4">
@@ -74,17 +89,20 @@ function StatsSection() {
 }
 
 function ConditionsSection() {
+  const { language } = useLanguage();
+  const t = translations[language].home.conditions;
+
   return (
     <section className="bg-secondary py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">Conditions We Treat</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Specialized laser treatments for a wide range of colorectal conditions.
+            {t.subtitle}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CONDITIONS_TREATED.map((condition) => (
+          {t.items.map((condition) => (
             <Card key={condition} className="bg-card">
               <CardContent className="p-6 flex items-center gap-4">
                 <HeartPulse className="h-8 w-8 text-primary flex-shrink-0" />
@@ -99,13 +117,33 @@ function ConditionsSection() {
 }
 
 function WhyChooseUsSection() {
+  const { language } = useLanguage();
+  const t = translations[language].home.whyChooseUs;
+  const WHY_CHOOSE_US = [
+    { 
+        icon: ICONS.whyChooseUs[0],
+        title: t.item1.title, 
+        description: t.item1.description
+    },
+    { 
+        icon: ICONS.whyChooseUs[1],
+        title: t.item2.title, 
+        description: t.item2.description
+    },
+    { 
+        icon: ICONS.whyChooseUs[2],
+        title: t.item3.title, 
+        description: t.item3.description
+    }
+  ];
+
   return (
     <section className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">Why Choose Us?</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Get world-class colorectal & laser treatment right here in Bangladesh.
+            {t.subtitle}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -125,6 +163,9 @@ function WhyChooseUsSection() {
 }
 
 function ServicesPreviewSection() {
+    const { language } = useLanguage();
+    const t = translations[language].home.servicesPreview;
+
   return (
     <section className="bg-secondary py-16 sm:py-24">
       <div className="container mx-auto px-4">
@@ -140,28 +181,28 @@ function ServicesPreviewSection() {
             />
           </div>
           <div className="lg:w-1/2">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold">World-Class Services</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.title}</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              We offer state-of-the-art diagnostic and therapeutic services with a focus on minimally invasive laser procedures for Piles, Fistula, Fissure and more.
+              {t.subtitle}
             </p>
             <ul className="mt-6 space-y-4">
               <li className="flex items-start">
                 <Stethoscope className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                 <span>
-                  <h4 className="font-bold">Advanced Laser Surgery</h4>
-                  <p className="text-muted-foreground">Painless, bloodless solutions with faster recovery times.</p>
+                  <h4 className="font-bold">{t.item1.title}</h4>
+                  <p className="text-muted-foreground">{t.item1.description}</p>
                 </span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                 <span>
-                  <h4 className="font-bold">Comprehensive Diagnosis</h4>
-                  <p className="text-muted-foreground">Accurate diagnosis using the latest technology to guide the most effective treatment plan.</p>
+                  <h4 className="font-bold">{t.item2.title}</h4>
+                  <p className="text-muted-foreground">{t.item2.description}</p>
                 </span>
               </li>
             </ul>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/services">Explore All Services</Link>
+              <Link href="/services">{t.button}</Link>
             </Button>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, type ReactNode } from "react";
@@ -7,7 +8,7 @@ import { z } from "zod";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Loader2 } from "lucide-react";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -16,13 +17,19 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { appointmentSchema } from "@/lib/schemas";
+import { getAppointmentSchema } from "@/lib/schemas";
 import { submitAppointment } from "@/app/actions";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/i18n";
 
 export function AppointmentModal({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = translations[language].forms.appointment;
+
+  const appointmentSchema = getAppointmentSchema(language);
 
   const form = useForm<z.infer<typeof appointmentSchema>>({
     resolver: zodResolver(appointmentSchema),
@@ -41,16 +48,16 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
 
     if (result.success) {
       toast({
-        title: "Success!",
-        description: result.message,
+        title: t.success.title,
+        description: t.success.message,
       });
       form.reset();
       setOpen(false);
     } else {
       toast({
         variant: "destructive",
-        title: "Error",
-        description: "Something went wrong. Please try again.",
+        title: t.error.title,
+        description: t.error.message,
       });
     }
   }
@@ -60,9 +67,9 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl">Request an Appointment</DialogTitle>
+          <DialogTitle className="font-headline text-2xl">{t.title}</DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll contact you to confirm.
+            {t.subtitle}
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -72,9 +79,9 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel>{t.labels.name}</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder={t.placeholders.name} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -85,9 +92,9 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
+                  <FormLabel>{t.labels.phone}</FormLabel>
                   <FormControl>
-                    <Input placeholder="01XXXXXXXXX" {...field} />
+                    <Input placeholder={t.placeholders.phone} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -98,9 +105,9 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email Address</FormLabel>
+                  <FormLabel>{t.labels.email}</FormLabel>
                   <FormControl>
-                    <Input placeholder="you@example.com" {...field} />
+                    <Input placeholder={t.placeholders.email} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -111,7 +118,7 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
               name="date"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>Preferred Date</FormLabel>
+                  <FormLabel>{t.labels.date}</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -125,7 +132,7 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
-                            <span>Pick a date</span>
+                            <span>{t.placeholders.date}</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -152,10 +159,10 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Additional Message (Optional)</FormLabel>
+                  <FormLabel>{t.labels.message}</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us a bit about your reason for the visit"
+                      placeholder={t.placeholders.message}
                       className="resize-none"
                       {...field}
                     />
@@ -166,7 +173,7 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
             />
             <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Submit Request
+              {t.button}
             </Button>
           </form>
         </Form>

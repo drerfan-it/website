@@ -1,20 +1,30 @@
+
 "use client";
 
 import { z } from "zod";
+import { translations } from "./i18n";
 
-export const appointmentSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  date: z.date({
-    required_error: "A date for the appointment is required.",
-  }),
-  message: z.string().optional(),
-});
+type Language = "en" | "bn";
 
-export const contactSchema = z.object({
-    name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-    email: z.string().email({ message: "Please enter a valid email address." }),
-    subject: z.string().min(5, { message: "Subject must be at least 5 characters."}),
-    message: z.string().min(10, { message: "Message must be at least 10 characters."})
-});
+export const getAppointmentSchema = (lang: Language) => {
+    const t = translations[lang].forms.appointment;
+    return z.object({
+        name: z.string().min(2, { message: t.validation.name }),
+        phone: z.string().min(10, { message: t.validation.phone }),
+        email: z.string().email({ message: t.validation.email }),
+        date: z.date({
+            required_error: t.validation.date,
+        }),
+        message: z.string().optional(),
+    });
+};
+
+export const getContactSchema = (lang: Language) => {
+    const t = translations[lang].forms.contact;
+    return z.object({
+        name: z.string().min(2, { message: t.validation.name }),
+        email: z.string().email({ message: t.validation.email }),
+        subject: z.string().min(5, { message: t.validation.subject }),
+        message: z.string().min(10, { message: t.validation.message })
+    });
+};
