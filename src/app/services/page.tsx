@@ -1,11 +1,9 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AppointmentModal } from "@/components/AppointmentModal";
-import { LASER_VS_TRADITIONAL } from "@/lib/constants";
-import { CheckCircle } from "lucide-react";
+import { LASER_VS_TRADITIONAL, SERVICES_LIST } from "@/lib/constants";
+import { Check } from "lucide-react";
 
 export default function ServicesPage() {
     return (
@@ -16,67 +14,36 @@ export default function ServicesPage() {
                         Our Medical Services
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-                        Leveraging advanced technology for precise, minimally invasive colorectal treatments.
+                        World-class laser-based treatment for Piles, Fistula, Fissure, Pilonidal Sinus and a wide range of colorectal conditions.
                     </p>
                 </header>
                 
                 <section className="mb-16 sm:mb-24">
-                    <Tabs defaultValue="laser" className="w-full">
-                        <TabsList className="grid w-full grid-cols-2 md:w-1/2 mx-auto">
-                            <TabsTrigger value="laser">Laser Treatments</TabsTrigger>
-                            <TabsTrigger value="diagnostic">Diagnostic Services</TabsTrigger>
-                        </TabsList>
-                        <TabsContent value="laser">
-                            <Card className="mt-6">
-                                <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">State-of-the-Art Laser Procedures</CardTitle>
-                                    <CardDescription>Experience faster recovery and minimal discomfort with our advanced laser solutions.</CardDescription>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {SERVICES_LIST.map((service) => (
+                            <Card key={service.category} className="flex flex-col">
+                                <CardHeader className="flex flex-row items-start gap-4">
+                                    <div className="bg-primary/10 rounded-lg p-3 mt-1">
+                                        <service.icon className="h-8 w-8 text-primary" />
+                                    </div>
+                                    <div>
+                                        <CardTitle className="font-headline text-2xl">{service.category}</CardTitle>
+                                        <CardDescription>{service.description}</CardDescription>
+                                    </div>
                                 </CardHeader>
-                                <CardContent className="space-y-6">
-                                    <ServiceDetail 
-                                        title="Laser Hemorrhoidoplasty (LHP)" 
-                                        description="A minimally invasive procedure for hemorrhoids that shrinks them from the inside out without cutting tissues. Results in less pain and quicker return to normal activities."
-                                        imageUrl="https://placehold.co/600x400.png"
-                                        imageHint="laser surgery equipment"
-                                    />
-                                    <ServiceDetail 
-                                        title="Fistula-tract Laser Closure (FiLaC®)" 
-                                        description="An effective, sphincter-saving technique for treating anal fistulas. The laser probe closes the tract with precision, promoting healing while preserving muscle function."
-                                        imageUrl="https://placehold.co/600x400.png"
-                                        imageHint="medical procedure"
-                                    />
-                                     <ServiceDetail 
-                                        title="Laser Pilonidal Sinus Treatment (LPS)" 
-                                        description="A minimally invasive approach to treat pilonidal sinus disease. The procedure involves cleaning the sinus and sealing it with laser energy, leading to faster healing and lower recurrence rates."
-                                        imageUrl="https://placehold.co/600x400.png"
-                                        imageHint="patient consultation"
-                                    />
+                                <CardContent className="flex-grow">
+                                    <ul className="space-y-3">
+                                        {service.items.map((item) => (
+                                            <li key={item} className="flex items-start gap-3">
+                                                <Check className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                                                <span className="text-muted-foreground">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </CardContent>
                             </Card>
-                        </TabsContent>
-                        <TabsContent value="diagnostic">
-                           <Card className="mt-6">
-                                <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">Comprehensive Diagnostic Services</CardTitle>
-                                    <CardDescription>Accurate diagnosis is the first step to effective treatment. We use the latest tools to understand your condition.</CardDescription>
-                                </CardHeader>
-                                <CardContent className="space-y-6">
-                                    <ServiceDetail 
-                                        title="Anoscopy & Proctoscopy" 
-                                        description="Visual examination of the anal canal and rectum to diagnose conditions like hemorrhoids, fissures, and inflammation. A quick and essential in-office procedure."
-                                        imageUrl="https://placehold.co/600x400.png"
-                                        imageHint="medical diagnostic tool"
-                                    />
-                                    <ServiceDetail 
-                                        title="Ultrasound Imaging" 
-                                        description="Non-invasive imaging used to assess complex fistulas, abscesses, and other deep tissue conditions, providing a clear picture for accurate treatment planning."
-                                        imageUrl="https://placehold.co/600x400.png"
-                                        imageHint="ultrasound machine"
-                                    />
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
-                    </Tabs>
+                        ))}
+                    </div>
                 </section>
                 
                 <section className="mb-16 sm:mb-24">
@@ -120,25 +87,4 @@ export default function ServicesPage() {
             </div>
         </div>
     );
-}
-
-function ServiceDetail({ title, description, imageUrl, imageHint }: { title: string, description: string, imageUrl: string, imageHint: string }) {
-    return (
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 bg-secondary/50 p-6 rounded-lg">
-            <div className="md:w-1/3 w-full">
-                <Image 
-                    src={imageUrl}
-                    alt={title}
-                    data-ai-hint={imageHint}
-                    width={400}
-                    height={250}
-                    className="rounded-md object-cover shadow-md"
-                />
-            </div>
-            <div className="md:w-2/3">
-                <h3 className="text-xl font-bold font-headline mb-2">{title}</h3>
-                <p className="text-muted-foreground">{description}</p>
-            </div>
-        </div>
-    )
 }

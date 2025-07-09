@@ -11,10 +11,10 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <header className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold">
-            Meet Dr. Erfan
+            Meet Prof. Dr. S. M. A. Erfan
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-            A Commitment to Excellence in Colorectal Health
+            Pioneer Colorectal Surgeon in Bangladesh
           </p>
         </header>
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="lg:w-1/3 w-full">
             <Image
               src="https://placehold.co/400x500.png"
-              alt="Portrait of Dr. Erfan"
+              alt="Portrait of Prof. Dr. S. M. A. Erfan"
               data-ai-hint="doctor portrait"
               width={400}
               height={500}
@@ -31,13 +31,13 @@ export default function AboutPage() {
           </div>
           <div className="lg:w-2/3">
             <h2 className="font-headline text-3xl font-bold mb-4">
-              A Leader in Patient-Centric Care
+              A Leader in Patient-Centric Laser Surgery
             </h2>
             <p className="text-muted-foreground mb-4">
-              Dr. Erfan is a board-certified colorectal surgeon renowned for his expertise in minimally invasive laser procedures. With a career dedicated to advancing the field, he combines deep medical knowledge with a compassionate approach, ensuring every patient receives the highest standard of care.
+              Prof. Dr. S. M. A. Erfan is a highly respected colorectal surgeon, celebrated for his pioneering work in laser-based treatments in Bangladesh. With prestigious qualifications including MBBS and FCPS (Surgery), and advanced international training, he has dedicated his career to providing world-class, painless surgical solutions.
             </p>
             <p className="text-muted-foreground">
-              His philosophy is rooted in patient education and empowerment. Dr. Erfan believes in building a partnership with his patients, providing them with clear, comprehensive information to make informed decisions about their health. This collaborative approach has earned him a reputation for not only exceptional surgical outcomes but also for the trust and confidence he inspires in those he treats.
+              Having completed over 30,000 successful laser surgeries with a 99% success rate, Dr. Erfan's philosophy is rooted in combining cutting-edge technology with compassionate, patient-focused care. He believes in empowering patients with clear information, ensuring they are comfortable and confident in their treatment decisions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               <Card>
@@ -47,9 +47,9 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-sm">
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Board-Certified Surgeon</li>
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Colorectal Fellowship</li>
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Member of ASCRS</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> MBBS, FCPS (Surgery)</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Advanced International Training</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Pioneer of Laser Surgery in BD</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -60,9 +60,9 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Laser Hemorrhoidoplasty</li>
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Fissure & Fistula Treatment</li>
-                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Pilonidal Sinus Surgery</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Piles, Fistula & Fissure</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Pilonidal Sinus Laser Surgery</li>
+                      <li className="flex items-center"><Check className="text-primary mr-2 h-4 w-4" /> Colorectal Cancer Care</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
         <section className="bg-secondary rounded-lg p-8 md:p-12 text-center">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Ready for a Consultation?</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Take the first step towards better health. Schedule your confidential consultation with Dr. Erfan today.</p>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Take the first step towards better health. Schedule your confidential consultation with Prof. Dr. Erfan today.</p>
             <div className="mt-8">
               <AppointmentModal>
                 <Button size="lg">

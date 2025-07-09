@@ -28,9 +28,14 @@ export default function ContactPage() {
                         <div>
                             <h2 className="font-headline text-2xl font-bold mb-4">Contact Information</h2>
                             <ul className="space-y-4 text-lg">
-                                <li className="flex items-center gap-4">
-                                    <Phone className="h-6 w-6 text-primary" />
-                                    <span>(123) 456-7890</span>
+                                <li className="flex items-start gap-4">
+                                    <Phone className="h-6 w-6 text-primary mt-1" />
+                                    <div>
+                                        <span>For Appointment:</span>
+                                        <p className="font-semibold">01626-555511</p>
+                                        <p className="font-semibold">01865-555500</p>
+                                        <p className="font-semibold">01865-555511</p>
+                                    </div>
                                 </li>
                                 <li className="flex items-center gap-4">
                                     <Mail className="h-6 w-6 text-primary" />
@@ -38,7 +43,11 @@ export default function ContactPage() {
                                 </li>
                                 <li className="flex items-start gap-4">
                                     <MapPin className="h-6 w-6 text-primary mt-1" />
-                                    <span>123 Medical Lane, Suite 100<br/>Health City, HC 12345</span>
+                                    <span>
+                                        <strong>Dr. Erfan Colorectal Center</strong><br/>
+                                        City Tower, 44/7 Panthapath<br/>
+                                        Dhaka-1205, Bangladesh
+                                    </span>
                                 </li>
                             </ul>
                         </div>
@@ -65,11 +74,11 @@ export default function ContactPage() {
                 <section className="mt-16 sm:mt-24">
                     <h2 className="font-headline text-center text-3xl md:text-4xl font-bold mb-8">Our Location</h2>
                     <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl">
-                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://maps.google.com/?q=City+Tower,44/7+Panthapath,Dhaka" target="_blank" rel="noopener noreferrer">
                             <Image 
                                 src="https://placehold.co/1200x600.png"
                                 alt="Map to Dr Erfan Colorectal Center"
-                                data-ai-hint="city map"
+                                data-ai-hint="city map Dhaka"
                                 width={1200}
                                 height={600}
                                 className="w-full h-full object-cover"

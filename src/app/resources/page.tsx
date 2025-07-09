@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { AppointmentModal } from "@/components/AppointmentModal";
@@ -55,7 +55,7 @@ export default function ResourcesPage() {
                                 <CardContent className="flex-grow flex flex-col">
                                     <p className="text-muted-foreground flex-grow">{resource.description}</p>
                                     <Button asChild className="mt-4 w-full">
-                                        <a href={resource.link}>Download PDF</a>
+                                        <a href={resource.link} target="_blank" rel="noopener noreferrer">Download PDF</a>
                                     </Button>
                                 </CardContent>
                             </Card>
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
                 
                 <section className="bg-secondary rounded-lg p-8 md:p-12 text-center">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Have More Questions?</h2>
-                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">We're here to help. Schedule a consultation to discuss your specific needs and concerns with Dr. Erfan.</p>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">We're here to help. Schedule a consultation to discuss your specific needs and concerns with Prof. Dr. Erfan.</p>
                     <div className="mt-8">
                       <AppointmentModal>
                         <Button size="lg">

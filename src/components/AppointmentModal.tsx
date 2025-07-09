@@ -87,7 +87,7 @@ export function AppointmentModal({ children }: { children: ReactNode }) {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="(123) 456-7890" {...field} />
+                    <Input placeholder="01XXXXXXXXX" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

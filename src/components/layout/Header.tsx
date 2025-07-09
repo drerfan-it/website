@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <HeartPulse className="h-8 w-8 text-primary" />
-            <span className="font-headline text-xl font-bold">Dr Erfan</span>
+            <span className="font-headline text-xl font-bold">Prof. Dr. Erfan</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -65,7 +65,7 @@ export default function Header() {
               </Link>
             ))}
             <AppointmentModal>
-                <Button className="w-full mt-4">Book Appointment</Button>
+                <Button className="w-full mt-4" onClick={() => setIsOpen(false)}>Book Appointment</Button>
             </AppointmentModal>
           </nav>
         </div>

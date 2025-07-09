@@ -7,8 +7,8 @@ import Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Dr Erfan Colorectal Center",
-  description: "Specialized care in colorectal health by Dr. Erfan.",
+  title: "Prof. Dr. S. M. A. Erfan | Colorectal Surgeon Bangladesh",
+  description: "Pioneer Colorectal & Laser Surgeon in Bangladesh. Specializing in painless treatment for piles, fistula, fissure, and pilonidal sinus.",
 };
 
 export default function RootLayout({
