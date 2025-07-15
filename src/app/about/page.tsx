@@ -30,7 +30,7 @@ export default function AboutPage() {
         <section className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="lg:w-1/3 w-full">
             <Image
-              src="https://placehold.co/400x500.png"
+              src="/prof_dr_sma_erfan.png"
               alt="Portrait of Prof. Dr. S. M. A. Erfan"
               data-ai-hint="doctor portrait"
               width={400}
