@@ -26,7 +26,7 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "Advanced Care at Dr Erfan Colorectal Center",
+        title: "Dr Erfan Colorectal Center",
         subtitle: "Painless, bloodless laser surgery for Piles, Fistula, Fissure & Pilonidal Sinus in Bangladesh, pioneered by Prof. Dr. S. M. A. Erfan.",
         button: "Book an Appointment",
       },
@@ -377,7 +377,7 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "ডাঃ ইরফান কোলোরেক্টাল সেন্টারে উন্নত সেবা",
+        title: "ডাঃ ইরফান কোলোরেক্টাল সেন্টার",
         subtitle: "অধ্যাপক ডাঃ এস এম এ ইরফানের হাত ধরে বাংলাদেশে পাইলস, ফিস্টুলা, ফিশার এবং পাইলোনিডাল সাইনাসের জন্য ব্যথাহীন, রক্তপাতহীন লেজার সার্জারি।",
         button: "অ্যাপয়েন্টমেন্ট বুক করুন",
       },
@@ -740,3 +740,5 @@ export const ICONS = {
       map: MapPin,
   }
 };
+
+    
