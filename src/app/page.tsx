@@ -37,8 +37,8 @@ function HeroSection() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
-        <div className="max-w-3xl px-4">
-          <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+        <div className="max-w-4xl px-4">
+          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             {t.title}
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
