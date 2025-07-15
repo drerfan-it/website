@@ -38,7 +38,7 @@ function HeroSection() {
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
         <div className="max-w-4xl px-4">
-          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             {t.title}
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
@@ -172,9 +172,9 @@ function ServicesPreviewSection() {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="Advanced laser treatment equipment"
-              data-ai-hint="laser equipment"
+              src="/dr_erfan_ot.png"
+              alt="Prof. Dr. S. M. A. Erfan performing a laser surgery"
+              data-ai-hint="doctor surgery"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl"
