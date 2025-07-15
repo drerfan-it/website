@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Prof. Dr. S. M. A. Erfan | Colorectal Surgeon Bangladesh",
+  title: "Dr Erfan Colorectal Center | Colorectal Surgeon Bangladesh",
   description: "Pioneer Colorectal & Laser Surgeon in Bangladesh. Specializing in painless treatment for piles, fistula, fissure, and pilonidal sinus.",
 };
 

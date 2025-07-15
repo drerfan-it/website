@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <HeartPulse className="h-8 w-8 text-primary" />
-              <span className="font-headline text-xl font-bold">Prof. Dr. Erfan</span>
+              <span className="font-headline text-xl font-bold">Dr Erfan Center</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               {t.footer.tagline}

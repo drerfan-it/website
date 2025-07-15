@@ -22,12 +22,12 @@ export const translations = {
       hours_1: "Sat - Tue, Thu: 6:00 PM - 9:00 PM",
       hours_2: "Wednesday: 6:00 PM - 9:00 PM",
       hours_3: "Friday: Closed",
-      copyright: `© ${new Date().getFullYear()} Prof. Dr. S. M. A. Erfan. All Rights Reserved.`,
+      copyright: `© ${new Date().getFullYear()} Dr Erfan Colorectal Center. All Rights Reserved.`,
     },
     home: {
       hero: {
-        title: "Advanced Colorectal Care by Prof. Dr. S. M. A. Erfan",
-        subtitle: "Pioneer in painless, bloodless laser surgery for Piles, Fistula, Fissure & Pilonidal Sinus in Bangladesh.",
+        title: "Advanced Care at Dr Erfan Colorectal Center",
+        subtitle: "Painless, bloodless laser surgery for Piles, Fistula, Fissure & Pilonidal Sinus in Bangladesh, pioneered by Prof. Dr. S. M. A. Erfan.",
         button: "Book an Appointment",
       },
       stats: {
@@ -80,7 +80,7 @@ export const translations = {
     },
     about: {
       title: "Meet Prof. Dr. S. M. A. Erfan",
-      subtitle: "Pioneer Colorectal Surgeon in Bangladesh",
+      subtitle: "Founder of Dr Erfan Colorectal Center",
       section1: {
         title: "A Leader in Patient-Centric Laser Surgery",
         p1: "Prof. Dr. S. M. A. Erfan is a highly respected colorectal surgeon, celebrated for his pioneering work in laser-based treatments in Bangladesh. With prestigious qualifications including MBBS and FCPS (Surgery), and advanced international training, he has dedicated his career to providing world-class, painless surgical solutions.",
@@ -109,13 +109,13 @@ export const translations = {
           { year: "2008", event: "Graduated from Premier Medical University" },
           { year: "2012", event: "Completed FCPS (Surgery)" },
           { year: "2014", event: "Pioneered laser colorectal surgery in Bangladesh" },
-          { year: "2018", event: "Established the Prof. Dr. S. M. A. Erfan Colorectal Center" },
+          { year: "2018", event: "Established the Dr Erfan Colorectal Center" },
           { year: "2022", event: "Crossed 30,000+ successful laser surgeries milestone" }
         ],
       },
       cta: {
         title: "Ready for a Consultation?",
-        subtitle: "Take the first step towards better health. Schedule your confidential consultation with Prof. Dr. Erfan today.",
+        subtitle: "Take the first step towards better health. Schedule your confidential consultation today.",
         button: "Book an Appointment",
       },
     },
@@ -215,7 +215,7 @@ export const translations = {
             answer: "Laser surgery offers numerous benefits, including minimal pain, faster recovery, less bleeding, and a lower risk of infection compared to traditional methods. Most procedures are done on an outpatient basis, allowing you to return home the same day."
           },
           {
-            question: "Is the consultation with Prof. Dr. Erfan confidential?",
+            question: "Is the consultation confidential?",
             answer: "Absolutely. We adhere to the strictest standards of patient confidentiality. Your consultation and all medical records are handled with the utmost privacy and security."
           },
           {
@@ -257,7 +257,7 @@ export const translations = {
       },
       cta: {
         title: "Have More Questions?",
-        subtitle: "We're here to help. Schedule a consultation to discuss your specific needs and concerns with Prof. Dr. Erfan.",
+        subtitle: "We're here to help. Schedule a consultation to discuss your specific needs and concerns.",
         button: "Book a Consultation",
       },
     },
@@ -373,12 +373,12 @@ export const translations = {
       hours_1: "শনি - মঙ্গল, বৃহস্পতি: সন্ধ্যা ৬:০০ - রাত ৯:০০",
       hours_2: "বুধবার: সন্ধ্যা ৬:০০ - রাত ৯:০০",
       hours_3: "শুক্রবার: বন্ধ",
-      copyright: `© ${new Date().getFullYear()} অধ্যাপক ডাঃ এস এম এ ইরফান। সর্বস্বত্ব সংরক্ষিত।`,
+      copyright: `© ${new Date().getFullYear()} ডাঃ ইরফান কোলোরেক্টাল সেন্টার। সর্বস্বত্ব সংরক্ষিত।`,
     },
     home: {
       hero: {
-        title: "অধ্যাপক ডাঃ এস এম এ ইরফানের উন্নত কোলোরেক্টাল সেবা",
-        subtitle: "বাংলাদেশে পাইলস, ফিস্টুলা, ফিশার এবং পাইলোনিডাল সাইনাসের জন্য ব্যথাহীন, রক্তপাতহীন লেজার সার্জারির পথিকৃৎ।",
+        title: "ডাঃ ইরফান কোলোরেক্টাল সেন্টারে উন্নত সেবা",
+        subtitle: "অধ্যাপক ডাঃ এস এম এ ইরফানের হাত ধরে বাংলাদেশে পাইলস, ফিস্টুলা, ফিশার এবং পাইলোনিডাল সাইনাসের জন্য ব্যথাহীন, রক্তপাতহীন লেজার সার্জারি।",
         button: "অ্যাপয়েন্টমেন্ট বুক করুন",
       },
       stats: {
@@ -431,7 +431,7 @@ export const translations = {
     },
     about: {
       title: "অধ্যাপক ডাঃ এস এম এ ইরফানের সাথে পরিচিত হন",
-      subtitle: "বাংলাদেশে পাইওনিয়ার কোলোরেক্টাল সার্জন",
+      subtitle: "ডাঃ ইরফান কোলোরেক্টাল সেন্টারের প্রতিষ্ঠাতা",
       section1: {
         title: "রোগী-কেন্দ্রিক লেজার সার্জারিতে একজন অগ্রণী",
         p1: "অধ্যাপক ডাঃ এস এম এ ইরফান একজন অত্যন্ত সম্মানিত কোলোরেক্টাল সার্জন, যিনি বাংলাদেশে লেজার-ভিত্তিক চিকিৎসায় তার অগ্রণী ভূমিকার জন্য প্রশংসিত। এমবিবিএস এবং এফসিপিএস (সার্জারি) সহ মর্যাদাপূর্ণ যোগ্যতা এবং উন্নত আন্তর্জাতিক প্রশিক্ষণের সাথে, তিনি বিশ্বমানের, ব্যথাহীন অস্ত্রোপচার সমাধান প্রদানের জন্য তার কর্মজীবন উৎসর্গ করেছেন।",
@@ -460,13 +460,13 @@ export const translations = {
           { year: "২০০৮", event: "প্রধান মেডিকেল বিশ্ববিদ্যালয় থেকে স্নাতক" },
           { year: "২০১২", event: "এফসিপিএস (সার্জারি) সম্পন্ন" },
           { year: "২০১৪", event: "বাংলাদেশে লেজার কোলোরেক্টাল সার্জারির সূচনা" },
-          { year: "২০১৮", event: "অধ্যাপক ডাঃ এস এম এ ইরফান কোলোরেক্টাল সেন্টার প্রতিষ্ঠা" },
+          { year: "২০১৮", event: "ডাঃ ইরফান কোলোরেক্টাল সেন্টার প্রতিষ্ঠা" },
           { year: "২০২২", event: "৩০,০০০+ সফল লেজার সার্জারির মাইলফলক অতিক্রম" }
         ],
       },
       cta: {
         title: "পরামর্শের জন্য প্রস্তুত?",
-        subtitle: "উত্তম স্বাস্থ্যের দিকে প্রথম পদক্ষেপ নিন। আজই অধ্যাপক ডাঃ ইরফানের সাথে আপনার গোপনীয় পরামর্শের সময়সূচী নির্ধারণ করুন।",
+        subtitle: "উত্তম স্বাস্থ্যের দিকে প্রথম পদক্ষেপ নিন। আজই আপনার গোপনীয় পরামর্শের সময়সূচী নির্ধারণ করুন।",
         button: "অ্যাপয়েন্টমেন্ট বুক করুন",
       },
     },
@@ -566,7 +566,7 @@ export const translations = {
               answer: "লেজার সার্জারি অনেক সুবিধা প্রদান করে, যার মধ্যে রয়েছে ন্যূনতম ব্যথা, দ্রুত আরোগ্য, কম রক্তপাত, এবং প্রচলিত পদ্ধতির তুলনায় সংক্রমণের ঝুঁকি কম। বেশিরভাগ পদ্ধতি বহির্বিভাগে করা হয়, যা আপনাকে একই দিনে বাড়ি ফেরার সুযোগ দেয়।"
             },
             {
-              question: "অধ্যাপক ডাঃ ইরফানের সাথে পরামর্শ কি গোপনীয়?",
+              question: "পরামর্শ কি গোপনীয়?",
               answer: "একদম। আমরা রোগীর গোপনীয়তার কঠোরতম মান মেনে চলি। আপনার পরামর্শ এবং সমস্ত মেডিকেল রেকর্ড সর্বোচ্চ গোপনীয়তা এবং নিরাপত্তার সাথে পরিচালনা করা হয়।"
             },
             {
@@ -608,7 +608,7 @@ export const translations = {
         },
         cta: {
           title: "আরও প্রশ্ন আছে?",
-          subtitle: "আমরা সাহায্য করতে এখানে আছি। অধ্যাপক ডাঃ ইরফানের সাথে আপনার নির্দিষ্ট প্রয়োজন এবং উদ্বেগ নিয়ে আলোচনা করার জন্য একটি পরামর্শের সময়সূচী নির্ধারণ করুন।",
+          subtitle: "আমরা সাহায্য করতে এখানে আছি। আপনার নির্দিষ্ট প্রয়োজন এবং উদ্বেগ নিয়ে আলোচনা করার জন্য একটি পরামর্শের সময়সূচী নির্ধারণ করুন।",
           button: "একটি পরামর্শ বুক করুন",
         },
       },
