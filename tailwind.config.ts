@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"PT Sans"', '"Hind Siliguri"', 'sans-serif'],
-        headline: ['"Playfair Display"', '"Hind Siliguri"', 'serif'],
+        body: ['"PT Sans"', 'Durbar', 'sans-serif'],
+        headline: ['"Playfair Display"', 'Durbar', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
