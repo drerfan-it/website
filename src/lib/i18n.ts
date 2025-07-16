@@ -19,9 +19,14 @@ export const translations = {
       quickLinks: "Quick Links",
       contactUs: "Contact Us",
       clinicHours: "Clinic Hours",
-      hours_1: "Sat - Tue, Thu: 6:00 PM - 9:00 PM",
-      hours_2: "Wednesday: 6:00 PM - 9:00 PM",
-      hours_3: "Friday: Closed",
+      hours_1: {
+        days: "Saturday - Thursday",
+        time: "6:00 PM - 9:00 PM",
+      },
+      hours_2: {
+        days: "Friday",
+        time: "Closed",
+      },
       copyright: `© ${new Date().getFullYear()} Dr Erfan Colorectal Center. All Rights Reserved.`,
     },
     home: {
@@ -277,12 +282,10 @@ export const translations = {
       },
       hours: {
         title: "Clinic Hours",
-        days1: "Saturday - Tuesday, Thursday",
+        days1: "Saturday - Thursday",
         time1: "6:00 PM - 9:00 PM",
-        days2: "Wednesday",
-        time2: "6:00 PM - 9:00 PM",
-        days3: "Friday",
-        time3: "Closed",
+        days2: "Friday",
+        time2: "Closed",
       },
       location: {
         title: "Our Location",
@@ -370,9 +373,14 @@ export const translations = {
       quickLinks: "দ্রুত লিঙ্ক",
       contactUs: "আমাদের সাথে যোগাযোগ",
       clinicHours: "ক্লিনিকের সময়",
-      hours_1: "শনি - মঙ্গল, বৃহস্পতি: সন্ধ্যা ৬:০০ - রাত ৯:০০",
-      hours_2: "বুধবার: সন্ধ্যা ৬:০০ - রাত ৯:০০",
-      hours_3: "শুক্রবার: বন্ধ",
+      hours_1: {
+        days: "শনি - বৃহস্পতিবার",
+        time: "সন্ধ্যা ৬:০০ - রাত ৯:০০",
+      },
+      hours_2: {
+        days: "শুক্রবার",
+        time: "বন্ধ",
+      },
       copyright: `© ${new Date().getFullYear()} ডাঃ ইরফান কোলোরেক্টাল সেন্টার। সর্বস্বত্ব সংরক্ষিত।`,
     },
     home: {
@@ -628,12 +636,10 @@ export const translations = {
         },
         hours: {
           title: "ক্লিনিকের সময়",
-          days1: "শনি - মঙ্গল, বৃহস্পতিবার",
+          days1: "শনি - বৃহস্পতিবার",
           time1: "সন্ধ্যা ৬:০০ - রাত ৯:০০",
-          days2: "বুধবার",
-          time2: "সন্ধ্যা ৬:০০ - রাত ৯:০০",
-          days3: "শুক্রবার",
-          time3: "বন্ধ",
+          days2: "শুক্রবার",
+          time2: "বন্ধ",
         },
         location: {
           title: "আমাদের অবস্থান",
@@ -714,12 +720,22 @@ export const ICONS = {
     "Digestive & Bowel Disorders": Waves,
     "Cancer Care & Polyp Removal": ShieldCheck,
     "Diagnostic Tests": Microscope,
+    "উন্নত লেজার সার্জারি": Stethoscope,
+    "সম্পূর্ণ পাইলস (অর্শ) সেবা": HeartPulse,
+    "অ্যানোরেক্টাল অবস্থা": CheckCircle,
+    "হজম এবং অন্ত্রের রোগ": Waves,
+    "ক্যান্সার সেবা এবং পলিপ অপসারণ": ShieldCheck,
+    "ডায়াগনস্টিক পরীক্ষা": Microscope,
   },
   resources: {
       "Pre-Operative Guide": Download,
       "Post-Operative Care": Download,
       "Condition Fact Sheets": BookText,
       "Patient Support": LifeBuoy,
+      "প্রাক-অপারেটিভ গাইড": Download,
+      "পোস্ট-অপারেটিভ কেয়ার": Download,
+      "কন্ডিশন ফ্যাক্ট শিট": BookText,
+      "রোগী সমর্থন": LifeBuoy,
   },
   whyChooseUs: [ShieldCheck, CheckCircle, HeartPulse],
   about: {
@@ -740,5 +756,3 @@ export const ICONS = {
       map: MapPin,
   }
 };
-
-    

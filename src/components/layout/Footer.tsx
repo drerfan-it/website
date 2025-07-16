@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { HeartPulse } from "lucide-react";
+import { HeartPulse, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations, ICONS } from "@/lib/i18n";
 
@@ -21,6 +21,11 @@ export default function Footer() {
   const socialLinks = [
     { href: "https://facebook.com/profdrerfan", icon: ICONS.footer.facebook },
     { href: "https://www.youtube.com/@prof.dr.smaerfan", icon: ICONS.footer.youtube },
+  ];
+
+  const clinicHours = [
+    t.footer.hours_1,
+    t.footer.hours_2,
   ];
 
   return (
@@ -77,10 +82,16 @@ export default function Footer() {
 
           <div>
             <h3 className="font-headline text-lg font-semibold mb-4">{t.footer.clinicHours}</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>{t.footer.hours_1}</li>
-                <li>{t.footer.hours_2}</li>
-                <li>{t.footer.hours_3}</li>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+                {clinicHours.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-primary" />
+                        <div>
+                            <span className="font-semibold text-foreground">{item.days}:</span>
+                            <span className="ml-2">{item.time}</span>
+                        </div>
+                    </li>
+                ))}
             </ul>
           </div>
         </div>
