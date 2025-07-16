@@ -15,6 +15,11 @@ export default function ContactPage() {
     const MapPinIcon = ICONS.contact.map;
     const ClockIcon = ICONS.contact.clock;
 
+    const clinicHours = [
+        { days: t.hours.days1, time: t.hours.time1 },
+        { days: t.hours.days2, time: t.hours.time2 },
+    ];
+
     return (
         <div className="bg-background">
             <div className="container mx-auto px-4 py-16 sm:py-24">
@@ -65,19 +70,13 @@ export default function ContactPage() {
                         </div>
                          <div>
                             <h2 className="font-headline text-2xl font-bold mb-4">{t.hours.title}</h2>
-                            <ul className="space-y-3 text-lg text-muted-foreground">
-                                <li className="flex items-center gap-4">
-                                    <ClockIcon className="h-6 w-6 text-primary" />
-                                    <span>{t.hours.days1}: {t.hours.time1}</span>
-                                </li>
-                                <li className="flex items-center gap-4">
-                                    <ClockIcon className="h-6 w-6 text-primary" />
-                                    <span>{t.hours.days2}: {t.hours.time2}</span>
-                                </li>
-                                 <li className="flex items-center gap-4">
-                                    <ClockIcon className="h-6 w-6 text-primary" />
-                                    <span>{t.hours.days3}: {t.hours.time3}</span>
-                                </li>
+                             <ul className="space-y-3 text-lg text-muted-foreground">
+                                {clinicHours.map((item, index) => (
+                                    <li key={index} className="flex items-center gap-4">
+                                        <ClockIcon className="h-6 w-6 text-primary" />
+                                        <span><strong>{item.days}:</strong> {item.time}</span>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
