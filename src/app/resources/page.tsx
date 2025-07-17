@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -10,13 +11,20 @@ import { translations, ICONS } from "@/lib/i18n";
 import type { ElementType } from "react";
 import { BookText } from "lucide-react";
 
+const INITIAL_VIDEO_COUNT = 4;
+
 export default function ResourcesPage() {
     const { language } = useLanguage();
     const t = translations[language].resources;
+    const [visibleVideos, setVisibleVideos] = useState(INITIAL_VIDEO_COUNT);
 
     const getIconForResource = (title: string): ElementType => {
         const iconKey = title as keyof typeof ICONS.resources;
         return ICONS.resources[iconKey] || BookText;
+    };
+
+    const showMoreVideos = () => {
+        setVisibleVideos(t.videoPortfolio.items.length);
     };
 
     return (
@@ -30,6 +38,34 @@ export default function ResourcesPage() {
                         {t.subtitle}
                     </p>
                 </header>
+
+                <section className="mb-16 sm:mb-24">
+                    <div className="text-center max-w-2xl mx-auto mb-12">
+                        <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.videoPortfolio.title}</h2>
+                        <p className="mt-4 text-lg text-muted-foreground">{t.videoPortfolio.subtitle}</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {t.videoPortfolio.items.slice(0, visibleVideos).map((video) => (
+                            <div key={video.id} className="aspect-video">
+                                <iframe
+                                    className="w-full h-full rounded-lg shadow-lg"
+                                    src={`https://www.youtube.com/embed/${video.id}`}
+                                    title={video.title}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen>
+                                </iframe>
+                            </div>
+                        ))}
+                    </div>
+                    {visibleVideos < t.videoPortfolio.items.length && (
+                        <div className="text-center mt-12">
+                            <Button onClick={showMoreVideos} size="lg">
+                                {t.videoPortfolio.seeMore}
+                            </Button>
+                        </div>
+                    )}
+                </section>
 
                 <section className="mb-16 sm:mb-24">
                     <div className="text-center max-w-2xl mx-auto mb-12">
@@ -76,27 +112,6 @@ export default function ResourcesPage() {
                                 </CardContent>
                             </Card>
                         )})}
-                    </div>
-                </section>
-                
-                <section className="mb-16 sm:mb-24">
-                    <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.videoPortfolio.title}</h2>
-                        <p className="mt-4 text-lg text-muted-foreground">{t.videoPortfolio.subtitle}</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {t.videoPortfolio.items.map((video) => (
-                            <div key={video.id} className="aspect-video">
-                                <iframe
-                                    className="w-full h-full rounded-lg shadow-lg"
-                                    src={`https://www.youtube.com/embed/${video.id}`}
-                                    title={video.title}
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen>
-                                </iframe>
-                            </div>
-                        ))}
                     </div>
                 </section>
 

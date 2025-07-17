@@ -263,9 +263,18 @@ export const translations = {
       videoPortfolio: {
         title: "Patient Testimonials",
         subtitle: "Hear from our patients about their experiences.",
+        seeMore: "See More Reviews",
         items: [
             { id: "eO34_18nboI", title: "Patient Review 1" },
-            { id: "dQw4w9WgXcQ", title: "Patient Review 2" },
+            { id: "sB6h-i-g_oA", title: "Patient Review 2" },
+            { id: "AocmhA1BVIc", title: "Patient Review 3" },
+            { id: "TLCB0gI-i_Y", title: "Patient Review 4" },
+            { id: "4XjGgQ8kI3g", title: "Patient Review 5" },
+            { id: "rSj2b-lG_n8", title: "Patient Review 6" },
+            { id: "i8gMAH_Bicg", title: "Patient Review 7" },
+            { id: "nZ7V_46uLqA", title: "Patient Review 8" },
+            { id: "8W4t-j3nO-Y", title: "Patient Review 9" },
+            { id: "5y_O5S7WzP8", title: "Patient Review 10" },
         ]
       },
       cta: {
@@ -625,9 +634,18 @@ export const translations = {
         videoPortfolio: {
             title: "রোগীদের মতামত",
             subtitle: "আমাদের রোগীদের অভিজ্ঞতা সম্পর্কে শুনুন।",
+            seeMore: "আরও পর্যালোচনা দেখুন",
             items: [
                 { id: "eO34_18nboI", title: "রোগীর পর্যালোচনা ১" },
-                { id: "dQw4w9WgXcQ", title: "রোগীর পর্যালোচনা ২" },
+                { id: "sB6h-i-g_oA", title: "রোগীর পর্যালোচনা ২" },
+                { id: "AocmhA1BVIc", title: "রোগীর পর্যালোচনা ৩" },
+                { id: "TLCB0gI-i_Y", title: "রোগীর পর্যালোচনা ৪" },
+                { id: "4XjGgQ8kI3g", title: "রোগীর পর্যালোচনা ৫" },
+                { id: "rSj2b-lG_n8", title: "রোগীর পর্যালোচনা ৬" },
+                { id: "i8gMAH_Bicg", title: "রোগীর পর্যালোচনা ৭" },
+                { id: "nZ7V_46uLqA", title: "রোগীর পর্যালোচনা ৮" },
+                { id: "8W4t-j3nO-Y", title: "রোগীর পর্যালোচনা ৯" },
+                { id: "5y_O5S7WzP8", title: "রোগীর পর্যালোচনা ১০" },
             ]
         },
         cta: {
