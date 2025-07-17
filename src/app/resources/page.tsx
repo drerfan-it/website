@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -13,18 +13,29 @@ import { BookText } from "lucide-react";
 
 const INITIAL_VIDEO_COUNT = 4;
 
+type Video = {
+    id: string;
+    title: string;
+};
+
 export default function ResourcesPage() {
     const { language } = useLanguage();
     const t = translations[language].resources;
-    const [visibleVideos, setVisibleVideos] = useState(INITIAL_VIDEO_COUNT);
+    
+    const [videos, setVideos] = useState<Video[]>([]);
+    const [visibleVideoCount, setVisibleVideoCount] = useState(INITIAL_VIDEO_COUNT);
 
+    useEffect(() => {
+        setVideos(t.videoPortfolio.items);
+    }, [t.videoPortfolio.items]);
+    
     const getIconForResource = (title: string): ElementType => {
         const iconKey = title as keyof typeof ICONS.resources;
         return ICONS.resources[iconKey] || BookText;
     };
 
     const showMoreVideos = () => {
-        setVisibleVideos(t.videoPortfolio.items.length);
+        setVisibleVideoCount(videos.length);
     };
 
     return (
@@ -45,7 +56,7 @@ export default function ResourcesPage() {
                         <p className="mt-4 text-lg text-muted-foreground">{t.videoPortfolio.subtitle}</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {t.videoPortfolio.items.slice(0, visibleVideos).map((video) => (
+                        {videos.slice(0, visibleVideoCount).map((video) => (
                             <div key={video.id} className="aspect-video">
                                 <iframe
                                     className="w-full h-full rounded-lg shadow-lg"
@@ -58,7 +69,7 @@ export default function ResourcesPage() {
                             </div>
                         ))}
                     </div>
-                    {visibleVideos < t.videoPortfolio.items.length && (
+                    {visibleVideoCount < videos.length && (
                         <div className="text-center mt-12">
                             <Button onClick={showMoreVideos} size="lg">
                                 {t.videoPortfolio.seeMore}
