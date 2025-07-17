@@ -260,6 +260,14 @@ export const translations = {
             }
         ],
       },
+      videoPortfolio: {
+        title: "Patient Testimonials",
+        subtitle: "Hear from our patients about their experiences.",
+        items: [
+            { id: "eO34_18nboI", title: "Patient Review 1" },
+            { id: "dQw4w9WgXcQ", title: "Patient Review 2" },
+        ]
+      },
       cta: {
         title: "Have More Questions?",
         subtitle: "We're here to help. Schedule a consultation to discuss your specific needs and concerns.",
@@ -613,6 +621,14 @@ export const translations = {
                   link: "/#"
               }
           ],
+        },
+        videoPortfolio: {
+            title: "রোগীদের মতামত",
+            subtitle: "আমাদের রোগীদের অভিজ্ঞতা সম্পর্কে শুনুন।",
+            items: [
+                { id: "eO34_18nboI", title: "রোগীর পর্যালোচনা ১" },
+                { id: "dQw4w9WgXcQ", title: "রোগীর পর্যালোচনা ২" },
+            ]
         },
         cta: {
           title: "আরও প্রশ্ন আছে?",
